@@ -1,13 +1,64 @@
 import "./App.css";
 
 function App() {
+    const handleClick = (e: any, targetId: any) => {
+        e.preventDefault();
+
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <>
             <div className="main-left">
                 <div className="bio-wrap">
-                    <h1>Name</h1>
-                    <h2>Position</h2>
-                    <h3>Phrase</h3>
+                    <h1>Darren Lai</h1>
+                    <h2>Mechatronic Systems Engineering Student @ SFU</h2>
+                    <h3>
+                        Striving to create a positive community around myself
+                        for others, while also doing what makes me happy:
+                        inventing.
+                    </h3>
+                </div>
+
+                <div className="tob-wrap">
+                    <p>
+                        <a
+                            href="#about"
+                            onClick={(e) => handleClick(e, "about")}
+                        >
+                            About
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            href="#projects"
+                            onClick={(e) => handleClick(e, "projects")}
+                        >
+                            Projects
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            href="#experience"
+                            onClick={(e) => handleClick(e, "experience")}
+                        >
+                            Experience
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            href="#involvement"
+                            onClick={(e) => handleClick(e, "involvement")}
+                        >
+                            Involvement
+                        </a>
+                    </p>
                 </div>
 
                 <div className="socials-wrap">
@@ -37,7 +88,7 @@ function App() {
             <div className="main-right">
                 <div className="left-space"></div>
                 <div className="right-info">
-                    <div className="info-wrap">
+                    <div id="about" className="about-wrap">
                         <p>Info title</p>
                         <p>Info paragraph</p>
                         <p>Info title</p>
@@ -45,8 +96,15 @@ function App() {
                         <p>Info title</p>
                         <p>Info paragraph</p>
                     </div>
-                    <div className="projects-wrap">Projects</div>
-                    <div className="experience-wrap">Experience</div>
+                    <div id="projects" className="projects-wrap">
+                        <p>Projects</p>
+                    </div>
+                    <div id="experience" className="experience-wrap">
+                        <p>Experience</p>
+                    </div>
+                    <div id="involvement" className="involvement-wrap">
+                        <p>Involvement</p>
+                    </div>
                 </div>
             </div>
         </>
