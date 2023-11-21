@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+div {
+    border: black 1px solid;
+}
+
+.main-right {
+    display: flex;
+    width: calc(100vw - (100vw - 100%));
+}
+
+.main-left {
+    position: fixed;
+    width: calc((100vw - (100vw - 100%)) / 2);
+}
+
+.left-space {
+    width: 50vw;
+}
+
+.right-info {
+    width: 50vw;
+}
+
+.projects-wrap {
+    height: 80vh;
+}
+
+.experience-wrap {
+    height: 80vh;
+}
+
+.bio-wrap {
+    height: 80vh;
+}
+
+.info-wrap {
+    height: 80vh;
+}
+
+.socials-wrap {
+    height: 20vh;
+
+    display: flex;
+}
