@@ -75,7 +75,6 @@ function App() {
 
                     <div className="tob-wrap">
                         <div style={{ display: "flex" }}>
-                            {projectVisible ? <p>—</p> : <></>}
                             <p>
                                 <a
                                     href="#projects"
@@ -84,6 +83,11 @@ function App() {
                                     Projects
                                 </a>
                             </p>
+                            {projectVisible ? (
+                                <p style={{ marginLeft: "5px" }}> •</p>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                         <p>
                             <a
