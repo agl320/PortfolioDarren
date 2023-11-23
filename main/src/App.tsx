@@ -1,6 +1,52 @@
 import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
+    const [projectVisible, setProjectVisible] = useState(false);
+
+    useEffect(() => {
+        console.log("DONE");
+        const onScroll = () => {
+            const projectsEl = document.getElementById("projects");
+            const experiencesEl = document.getElementById("experience");
+            const involveEl = document.getElementById("involvement");
+
+            const projectsTop = 0;
+            const experiencesTop = 0.3125;
+            const involveTop = 0.625;
+            if (experiencesEl && projectsEl && involveEl) {
+                console.log(
+                    "Projects: ",
+                    projectsEl.getBoundingClientRect().top
+                );
+
+                console.log(
+                    "Experience: ",
+                    experiencesEl.getBoundingClientRect().top
+                );
+
+                console.log(
+                    "Involvement: ",
+                    involveEl.getBoundingClientRect().top
+                );
+
+                if (
+                    projectsEl.getBoundingClientRect().top <= projectsTop &&
+                    experiencesEl.getBoundingClientRect().top >= experiencesTop
+                ) {
+                    setProjectVisible(true);
+                } else {
+                    setProjectVisible(false);
+                }
+            }
+        };
+        window.addEventListener("scroll", onScroll);
+
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, []);
+
     const handleClick = (e: any, targetId: any) => {
         e.preventDefault();
 
@@ -28,14 +74,17 @@ function App() {
                     </div>
 
                     <div className="tob-wrap">
-                        <p>
-                            <a
-                                href="#projects"
-                                onClick={(e) => handleClick(e, "projects")}
-                            >
-                                Projects
-                            </a>
-                        </p>
+                        <div style={{ display: "flex" }}>
+                            {projectVisible ? <p>—</p> : <></>}
+                            <p>
+                                <a
+                                    href="#projects"
+                                    onClick={(e) => handleClick(e, "projects")}
+                                >
+                                    Projects
+                                </a>
+                            </p>
+                        </div>
                         <p>
                             <a
                                 href="#experience"
