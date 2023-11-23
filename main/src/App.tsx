@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 function App() {
     const [projectVisible, setProjectVisible] = useState(false);
+    const [experienceVisible, setExperienceVisible] = useState(false);
+    const [involveVisible, setInvolveVisible] = useState(false);
 
     useEffect(() => {
         console.log("DONE");
@@ -32,11 +34,27 @@ function App() {
 
                 if (
                     projectsEl.getBoundingClientRect().top <= projectsTop &&
-                    experiencesEl.getBoundingClientRect().top >= experiencesTop
+                    experiencesEl.getBoundingClientRect().top > experiencesTop
                 ) {
                     setProjectVisible(true);
                 } else {
                     setProjectVisible(false);
+                }
+
+                if (
+                    experiencesEl.getBoundingClientRect().top <=
+                        experiencesTop &&
+                    involveEl.getBoundingClientRect().top > involveTop
+                ) {
+                    setExperienceVisible(true);
+                } else {
+                    setExperienceVisible(false);
+                }
+
+                if (involveEl.getBoundingClientRect().top <= involveTop) {
+                    setInvolveVisible(true);
+                } else {
+                    setInvolveVisible(false);
                 }
             }
         };
@@ -69,42 +87,110 @@ function App() {
                         <h3>
                             Striving to create a positive community around
                             myself for others, while also doing what makes me
-                            happy: inventing.
+                            happy: engineering.
                         </h3>
                     </div>
 
                     <div className="tob-wrap">
                         <div style={{ display: "flex" }}>
-                            <p>
-                                <a
-                                    href="#projects"
-                                    onClick={(e) => handleClick(e, "projects")}
-                                >
-                                    Projects
-                                </a>
-                            </p>
                             {projectVisible ? (
-                                <p style={{ marginLeft: "5px" }}> •</p>
+                                <>
+                                    <p style={{ marginRight: "5px" }}>•</p>
+                                    <p className="tob in-view">
+                                        <a
+                                            href="#projects"
+                                            onClick={(e) =>
+                                                handleClick(e, "projects")
+                                            }
+                                        >
+                                            Projects
+                                        </a>
+                                    </p>
+                                </>
                             ) : (
-                                <></>
+                                <>
+                                    <p style={{ marginRight: "5px" }}>
+                                        &nbsp;&nbsp;
+                                    </p>
+                                    <p className="tob">
+                                        <a
+                                            href="#projects"
+                                            onClick={(e) =>
+                                                handleClick(e, "projects")
+                                            }
+                                        >
+                                            Projects
+                                        </a>
+                                    </p>
+                                </>
                             )}
                         </div>
-                        <p>
-                            <a
-                                href="#experience"
-                                onClick={(e) => handleClick(e, "experience")}
-                            >
-                                Experience
-                            </a>
-                        </p>
-                        <p>
-                            <a
-                                href="#involvement"
-                                onClick={(e) => handleClick(e, "involvement")}
-                            >
-                                Involvement
-                            </a>
-                        </p>
+                        <div style={{ display: "flex" }}>
+                            {experienceVisible ? (
+                                <>
+                                    <p style={{ marginRight: "5px" }}>•</p>
+                                    <p className="tob in-view">
+                                        <a
+                                            href="#experience"
+                                            onClick={(e) =>
+                                                handleClick(e, "experience")
+                                            }
+                                        >
+                                            Experience
+                                        </a>
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <p style={{ marginRight: "5px" }}>
+                                        &nbsp;&nbsp;
+                                    </p>
+                                    <p className="tob">
+                                        <a
+                                            href="#experience"
+                                            onClick={(e) =>
+                                                handleClick(e, "experience")
+                                            }
+                                        >
+                                            Experience
+                                        </a>
+                                    </p>
+                                </>
+                            )}
+                        </div>
+                        <div style={{ display: "flex" }}>
+                            {involveVisible ? (
+                                <>
+                                    <p style={{ marginRight: "5px" }}>•</p>
+                                    <p className="tob in-view">
+                                        <a
+                                            href="#involvement"
+                                            onClick={(e) =>
+                                                handleClick(e, "involvement")
+                                            }
+                                        >
+                                            Involvement
+                                        </a>
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <p style={{ marginRight: "5px" }}>
+                                        &nbsp;&nbsp;
+                                    </p>
+                                    <p className="tob">
+                                        <a
+                                            href="#involvement"
+                                            onClick={(e) =>
+                                                handleClick(e, "involvement")
+                                            }
+                                        >
+                                            Involvement
+                                        </a>
+                                    </p>
+                                </>
+                            )}
+                        </div>
                     </div>
 
                     <div className="socials-wrap">
