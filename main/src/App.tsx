@@ -7,7 +7,14 @@ function App() {
     const [involveVisible, setInvolveVisible] = useState(false);
 
     useEffect(() => {
-        console.log("DONE");
+        const targetElement = document.getElementById("projects");
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+            });
+        }
+
         const onScroll = () => {
             const projectsEl = document.getElementById("projects");
             const experiencesEl = document.getElementById("experience");
