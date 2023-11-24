@@ -79,6 +79,8 @@ div {
     border: rgba(255, 255, 255, 0.2) 2px solid;
     border-radius: 5px;
 
+    background-color: rgba(255, 255, 255, 0.02);
+
     margin-top: 10px;
     padding: 20px;
 
@@ -135,7 +137,7 @@ div {
 }
 
 .tob-wrap > div:not(:last-child) {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .socials-wrap {
@@ -164,3 +166,25 @@ div {
     color: rgba(255, 255, 255, 1);
     transition: color 0.2s;
 }
+
+.caps {
+    font-family: "Onest", sans-serif;
+    font-size: 15px;
+}
+
+.caps > * {
+    font-family: "Onest", sans-serif;
+    font-size: 15px;
+}
+
+.exp-box {
+    margin-top: 10px;
+}
+
+.exp-title {
+    display: flex;
+}
+
+/* .experience-wrap > *:not(:last-child) {
+    padding-bottom: 30px;
+} */

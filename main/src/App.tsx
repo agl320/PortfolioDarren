@@ -7,7 +7,7 @@ function App() {
     const [involveVisible, setInvolveVisible] = useState(false);
 
     useEffect(() => {
-        const targetElement = document.getElementById("projects");
+        const targetElement = document.getElementById("experience");
 
         if (targetElement) {
             targetElement.scrollIntoView({
@@ -20,8 +20,8 @@ function App() {
             const experiencesEl = document.getElementById("experience");
             const involveEl = document.getElementById("involvement");
 
-            const projectsTop = 0;
-            const experiencesTop = 0.3125;
+            const projectsTop = 0.1875;
+            const experiencesTop = 0;
             const involveTop = 0.625;
             if (experiencesEl && projectsEl && involveEl) {
                 console.log(
@@ -40,22 +40,22 @@ function App() {
                 );
 
                 if (
-                    projectsEl.getBoundingClientRect().top <= projectsTop &&
-                    experiencesEl.getBoundingClientRect().top > experiencesTop
-                ) {
-                    setProjectVisible(true);
-                } else {
-                    setProjectVisible(false);
-                }
-
-                if (
                     experiencesEl.getBoundingClientRect().top <=
                         experiencesTop &&
-                    involveEl.getBoundingClientRect().top > involveTop
+                    projectsEl.getBoundingClientRect().top > projectsTop
                 ) {
                     setExperienceVisible(true);
                 } else {
                     setExperienceVisible(false);
+                }
+
+                if (
+                    projectsEl.getBoundingClientRect().top <= projectsTop &&
+                    involveEl.getBoundingClientRect().top > involveTop
+                ) {
+                    setProjectVisible(true);
+                } else {
+                    setProjectVisible(false);
                 }
 
                 if (involveEl.getBoundingClientRect().top <= involveTop) {
@@ -100,99 +100,100 @@ function App() {
 
                     <div className="tob-wrap">
                         <div style={{ display: "flex" }}>
-                            {projectVisible ? (
+                            {experienceVisible ? (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>•</p>
-                                    <p className="tob in-view">
+                                    <p style={{ marginRight: "10px" }}>•</p>
+                                    <p className="tob in-view caps">
                                         <a
-                                            href="#projects"
+                                            href="#experience"
                                             onClick={(e) =>
-                                                handleClick(e, "projects")
+                                                handleClick(e, "experience")
                                             }
                                         >
-                                            Projects
+                                            EXPERIENCE
                                         </a>
                                     </p>
                                 </>
                             ) : (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>
+                                    <p style={{ marginRight: "10px" }}>
                                         &nbsp;&nbsp;
                                     </p>
-                                    <p className="tob">
+                                    <p className="tob caps">
                                         <a
-                                            href="#projects"
+                                            href="#experience"
                                             onClick={(e) =>
-                                                handleClick(e, "projects")
+                                                handleClick(e, "experience")
                                             }
                                         >
-                                            Projects
+                                            EXPERIENCE
                                         </a>
                                     </p>
                                 </>
                             )}
                         </div>
                         <div style={{ display: "flex" }}>
-                            {experienceVisible ? (
+                            {projectVisible ? (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>•</p>
-                                    <p className="tob in-view">
+                                    <p style={{ marginRight: "10px" }}>•</p>
+                                    <p className="tob in-view caps">
                                         <a
-                                            href="#experience"
+                                            href="#projects"
                                             onClick={(e) =>
-                                                handleClick(e, "experience")
+                                                handleClick(e, "projects")
                                             }
                                         >
-                                            Experience
+                                            PROJECTS
                                         </a>
                                     </p>
                                 </>
                             ) : (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>
+                                    <p style={{ marginRight: "10px" }}>
                                         &nbsp;&nbsp;
                                     </p>
-                                    <p className="tob">
+                                    <p className="tob caps">
                                         <a
-                                            href="#experience"
+                                            href="#projects"
                                             onClick={(e) =>
-                                                handleClick(e, "experience")
+                                                handleClick(e, "projects")
                                             }
                                         >
-                                            Experience
+                                            PROJECTS
                                         </a>
                                     </p>
                                 </>
                             )}
                         </div>
+
                         <div style={{ display: "flex" }}>
                             {involveVisible ? (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>•</p>
-                                    <p className="tob in-view">
+                                    <p style={{ marginRight: "10px" }}>•</p>
+                                    <p className="tob in-view caps">
                                         <a
                                             href="#involvement"
                                             onClick={(e) =>
                                                 handleClick(e, "involvement")
                                             }
                                         >
-                                            Involvement
+                                            INVOLVEMENT
                                         </a>
                                     </p>
                                 </>
                             ) : (
                                 <>
-                                    <p style={{ marginRight: "5px" }}>
+                                    <p style={{ marginRight: "10px" }}>
                                         &nbsp;&nbsp;
                                     </p>
-                                    <p className="tob">
+                                    <p className="tob caps">
                                         <a
                                             href="#involvement"
                                             onClick={(e) =>
                                                 handleClick(e, "involvement")
                                             }
                                         >
-                                            Involvement
+                                            INVOLVEMENT
                                         </a>
                                     </p>
                                 </>
@@ -230,8 +231,49 @@ function App() {
                 <div className="main-right">
                     <div className="left-space"></div>
                     <div className="right-info">
+                        <div id="experience" className="experience-wrap">
+                            <p className="caps">EXPERIENCE</p>
+                            <div className="exp-box">
+                                <div className="exp-title">
+                                    <p>Founder, President</p>
+                                    <p>&nbsp;•&nbsp;</p>
+                                    <p>SFU SubVision Robotics</p>
+                                </div>
+                            </div>
+                            <div className="exp-box">
+                                <div className="exp-title">
+                                    <p>2nd Year Representative</p>
+                                    <p>&nbsp;•&nbsp;</p>
+                                    <p>
+                                        Mechatronic Systems Engineering Student
+                                        Society
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="exp-box">
+                                <div className="exp-title">
+                                    <p>Analyst Intern</p>
+                                    <p>&nbsp;•&nbsp;</p>
+                                    <p>Foresight Canada</p>
+                                </div>
+                            </div>
+                            <div className="exp-box">
+                                <div className="exp-title">
+                                    <p>Team Lead</p>
+                                    <p>&nbsp;•&nbsp;</p>
+                                    <p>Team G.E.A.R.S.</p>
+                                </div>
+                            </div>
+                            <div className="exp-box">
+                                <div className="exp-title">
+                                    <p>Mechanical Team Member</p>
+                                    <p>&nbsp;•&nbsp;</p>
+                                    <p>SFU Robot Soccer</p>
+                                </div>
+                            </div>
+                        </div>
                         <div id="projects" className="projects-wrap">
-                            <p>Projects</p>
+                            <p className="caps">PROJECTS</p>
                             <div className="project-box">
                                 <div>
                                     <p>Holonomic Submersible (ROV)</p>
@@ -276,11 +318,8 @@ function App() {
                                 <p>Lua Game Development</p>
                             </div>
                         </div>
-                        <div id="experience" className="experience-wrap">
-                            <p>Experience</p>
-                        </div>
                         <div id="involvement" className="involvement-wrap">
-                            <p>Involvement</p>
+                            <p className="caps">INVOLVEMENT</p>
                         </div>
                     </div>
                 </div>{" "}
