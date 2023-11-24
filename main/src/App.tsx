@@ -233,8 +233,28 @@ function App() {
                         <div id="projects" className="projects-wrap">
                             <p>Projects</p>
                             <div className="project-box">
-                                <p>SubVision Robotics ROV</p>
-                                <p>Description</p>
+                                <div>
+                                    <p>Holonomic Submersible (ROV)</p>
+                                    <p>SFU SubVision Robotics</p>
+                                </div>
+
+                                <p className="project-description">
+                                    I have been leading a team of talented
+                                    engineers in hopes of designing a holonomic
+                                    submersible w/ a mechanical gripper for the
+                                    2024 MateROV competition since May 2023.
+                                    <br></br>
+                                    <br></br>
+                                    This submersible is about 1mx1m,
+                                    manufactured using various materials
+                                    (aluminum, acrylic, ABS), and is navigated
+                                    using 6 thrusters/multisensor system.
+                                    Utilizing ROS (Robot Operating System) with
+                                    Python/Ubuntu/Pi4, we will be able to
+                                    control the submersible as it completes
+                                    various tasks underwater using a mechanical
+                                    gripper arm.
+                                </p>
                                 <div className="project-tags">
                                     <p>ROS1</p>
                                     <p>Python</p>
