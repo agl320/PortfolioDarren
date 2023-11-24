@@ -52,11 +52,15 @@ div {
 
 .main-left {
     position: fixed;
-    width: calc((100vw - (100vw - 100%)) / 2);
+    width: calc(((100vw - (100vw - 100%)) / 2) - 200px);
 }
 
-.main-left > div {
+.main-left {
     padding: 100px;
+}
+
+.main-left > div:not(:first-child) {
+    padding-top: 50px;
 }
 
 .left-space {
@@ -107,7 +111,7 @@ div {
     transition: opacity 0.2s;
 }
 
-.project-description {
+.description {
     font-size: 14px;
 }
 
@@ -185,6 +189,18 @@ div {
     display: flex;
 }
 
-/* .experience-wrap > *:not(:last-child) {
+.exp-box {
+    border: rgba(255, 255, 255, 0.2) 2px solid;
+    border-radius: 5px;
+
+    background-color: rgba(255, 255, 255, 0.02);
+
+    margin-top: 10px;
+    padding: 20px;
+
+    transition: border 0.2s;
+}
+
+.exp-box > *:not(:last-child) {
     padding-bottom: 30px;
-} */
+}

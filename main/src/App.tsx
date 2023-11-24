@@ -13,6 +13,7 @@ function App() {
             targetElement.scrollIntoView({
                 behavior: "smooth",
             });
+            setExperienceVisible(true);
         }
 
         const onScroll = () => {
@@ -20,7 +21,7 @@ function App() {
             const experiencesEl = document.getElementById("experience");
             const involveEl = document.getElementById("involvement");
 
-            const projectsTop = 0.1875;
+            const projectsTop = 0.3125;
             const experiencesTop = 0;
             const involveTop = 0.625;
             if (experiencesEl && projectsEl && involveEl) {
@@ -90,7 +91,7 @@ function App() {
                 <div className="main-left">
                     <div className="bio-wrap">
                         <h1>Darren Lai</h1>
-                        <h2>Mechatronic Systems Engineering Student @ SFU</h2>
+                        <h2>Mechatronic Systems Engineering @ SFU</h2>
                         <h3>
                             Striving to create a positive community around
                             myself for others, while also doing what makes me
@@ -237,17 +238,15 @@ function App() {
                                 <div className="exp-title">
                                     <p>Founder, President</p>
                                     <p>&nbsp;•&nbsp;</p>
-                                    <p>SFU SubVision Robotics</p>
+                                    <p>SubVision Robotics</p>
                                 </div>
+                                <p className="description">Action 1</p>
                             </div>
                             <div className="exp-box">
                                 <div className="exp-title">
-                                    <p>2nd Year Representative</p>
+                                    <p>2nd Year Rep.</p>
                                     <p>&nbsp;•&nbsp;</p>
-                                    <p>
-                                        Mechatronic Systems Engineering Student
-                                        Society
-                                    </p>
+                                    <p>SFU MSE Student Society</p>
                                 </div>
                             </div>
                             <div className="exp-box">
@@ -280,7 +279,7 @@ function App() {
                                     <p>SFU SubVision Robotics</p>
                                 </div>
 
-                                <p className="project-description">
+                                <p className="description">
                                     I have been leading a team of talented
                                     engineers in hopes of designing a holonomic
                                     submersible w/ a mechanical gripper for the
