@@ -1,2 +1,2 @@
-# darren-lai-website
+# PortfolioDarren
 Personal website for my brother.
